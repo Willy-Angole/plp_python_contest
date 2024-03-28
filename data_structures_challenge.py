@@ -87,3 +87,39 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    # OOP ASSIGNMENT
+
+    class Book:
+        def __init__(self, title, author, publication_year, is_available=True):
+            self.title = title
+            self.author = author
+            self.publication_year = publication_year
+            self.is_available = is_available
+        
+        def check_out(self):
+            self.is_available = False
+        
+        def check_in(self):
+            self.is_available = True
+        
+        def __str__(self):
+            availability = "Available" if self.is_available else "Checked Out"
+            return f"Title: {self.title}, Author: {self.author}, Year: {self.publication_year}, Availability: {availability}"
+
+# Create instances of the Book class
+book1 = Book("The Great Gatsby", "F. Scott Fitzgerald", 1925)
+book2 = Book("To Kill a Mockingbird", "Harper Lee", 1960)
+
+# Simulate checking out a book
+book1.check_out()
+
+# Simulate returning the book
+book1.check_in()
+
+# information about both books
+print("Book 1:")
+print(book1)
+print("\nBook 2:")
+print(book2)
+
